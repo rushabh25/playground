@@ -14,6 +14,7 @@ pipeline {
                 item -> echo "hello ${item}.trim()"
             }
         }
+    }
  
       stage ("build") {
         steps {
