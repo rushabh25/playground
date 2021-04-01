@@ -12,7 +12,10 @@ pipeline {
             steps {
               script {
                 try {
-                  params.PERSON.split(',').each { item -> echo "hello ${item}" }
+                  for(String item in params.PERSON.split(',')) {
+                    String trimmedItem = item.trim()
+                    echo "hello ${trimmedItem}"
+                  }
                 } catch (err) {
                   echo "caught exception: ${err.getMessage()}"
                 }
