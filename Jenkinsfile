@@ -10,8 +10,10 @@ pipeline {
     
     stage('Example') {
             steps {
-              params.PERSON.split(',').each {
-                item -> echo "hello ${item}.trim()"
+              script {
+                params.PERSON.split(',').each {
+                  item -> echo "hello ${item}.trim()"
+              }
             }
         }
     }
