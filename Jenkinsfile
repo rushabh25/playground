@@ -12,7 +12,7 @@ pipeline {
             steps {
               script {
                 params.PERSON.split(',').each {
-                  item -> echo "hello ${item}.trim()"
+                  item.trim() -> echo "hello ${item}"
               }
             }
         }
