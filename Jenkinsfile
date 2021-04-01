@@ -6,7 +6,11 @@ pipeline {
       
       stage ("setup parameters") {
         steps {
-          parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+          script {
+            parameters { 
+              string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') 
+            }
+          }
         }
       }
       
