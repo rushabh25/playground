@@ -1,6 +1,6 @@
 pipeline {
   
-  agent any {
+  agent any 
     
     stages {
       
@@ -21,7 +21,6 @@ pipeline {
           echo "deploying the application"
         }
       }
-      
     }
-  }
 }
+      
