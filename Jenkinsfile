@@ -11,9 +11,11 @@ pipeline {
     stage('Example') {
             steps {
               script {
-                params.PERSON.split(',').each {
-                  item -> echo "hello ${item}"
-              }
+                try {
+                  params.PERSON.split(',').each { item -> echo "hello ${item}" }
+                } catch (err) {
+                  echo "caught exception: ${err.getMessage()}"
+                }
             }
         }
     }
