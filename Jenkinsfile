@@ -4,6 +4,12 @@ pipeline {
     
     stages {
       
+      stage ("setup parameters") {
+        steps {
+          parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+        }
+      }
+      
       stage ("build") {
         steps {
           echo "building the application"
