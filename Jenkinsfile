@@ -10,6 +10,7 @@ pipeline {
     
     stage('Example') {
             steps {
+              script {
                 try {
                   for(String item in params.PERSON.split(',')) {
                     String trimmedItem = item.trim()
@@ -18,7 +19,7 @@ pipeline {
                 } catch (err) {
                   echo "caught exception: ${err.getMessage()}"
                 }
-            
+            }
         }
     }
  
