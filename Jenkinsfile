@@ -28,6 +28,12 @@ pipeline {
           echo "building the application"
         }
       }
+    
+    stage ("proceed with the remaining steps") {
+      steps {
+        input message: "Proceed with remaining steps?"
+      }
+    }
       
       stage ("test") {
         steps {
