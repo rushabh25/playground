@@ -1,18 +1,25 @@
+def approvalMap
+
 pipeline {
   
   agent any 
     
-    parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-    }
-  
   stages {
+    
+    stage('Setup Env') {
+      steps {
+        script {
+          approvalMap = input id: 'targetEnv', message: 'What files do you want to delete in a comma separated format', ok: 'Proceed?', parameters: [string(defaultValue: 'MY_FILE_NAME', description: 'File to be deleted, example: file1.txt,file2.txt', name:'targetEnv')]
+          env.TARGET = approvalMap
+        }
+      }
+    }
     
     stage('Example') {
             steps {
               script {
                 try {
-                  for(String item in params.PERSON.split(',')) {
+                  for(String item in env.TARGET.split(',')) {
                     String trimmedItem = item.trim()
                     echo "hello ${trimmedItem}"
                   }
