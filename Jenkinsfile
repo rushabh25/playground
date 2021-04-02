@@ -21,7 +21,7 @@ pipeline {
                 try {
                   for(String item in env.TARGET.split(',')) {
                     String trimmedItem = item.trim()
-                    echo "hello ${trimmedItem}"
+                    sh "echo \"hello ${trimmedItem}\""
                   }
                 } catch (err) {
                   echo "caught exception: ${err.getMessage()}"
