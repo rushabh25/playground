@@ -9,4 +9,5 @@ object App {
     println( "Hello World!" )
   }
 
+  // conflict?
 }
