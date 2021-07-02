@@ -18,4 +18,6 @@ object App {
   // conflict?
 
   // another commit on msater
+
+  // one more commit from master
 }
