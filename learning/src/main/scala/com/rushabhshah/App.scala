@@ -19,5 +19,6 @@ object App {
 
   // another commit on msater
 
+  // feature commit f2
   // one more commit from master
 }
