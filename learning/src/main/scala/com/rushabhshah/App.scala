@@ -23,4 +23,6 @@ object App {
   // one more commit from master
 
   // master commit m3
+
+  // another m3
 }
