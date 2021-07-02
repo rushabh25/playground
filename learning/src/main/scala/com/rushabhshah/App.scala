@@ -22,4 +22,6 @@ object App {
   // feature commit f2
   // one more commit from master
   // f3 commmit
+
+  // master commit m3
 }
