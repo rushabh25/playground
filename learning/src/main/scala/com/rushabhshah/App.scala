@@ -25,4 +25,6 @@ object App {
   // master commit m3
 
   // another m3
+
+// this is a new change on the feature/temp_feature_2 that I want to merge to main feature branch and then pull into the temp_feature_1
 }
